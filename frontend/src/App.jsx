@@ -5,6 +5,7 @@ import blogService from './services/blogs'
 import Error from './components/Error'
 import Login from './components/Login'
 import Notification from './components/Notification'
+import Register from './components/Register'
 
 
 const App = () => {
@@ -39,7 +40,17 @@ const App = () => {
     <div className="container">
       <Notification message={completeMessage} />
       <Error message={errorMessage} />
-      {!user && <Login setUser={setUser} setCompleteMessage={setCompleteMessage} setErrorMessage={setErrorMessage}/>}
+      {!user &&
+      <><h1>Login or create account</h1>
+        <hr />
+        <div>
+          <Login setUser={setUser} setCompleteMessage={setCompleteMessage} setErrorMessage={setErrorMessage} />
+          <hr />
+
+
+          <Register setCompleteMessage={setCompleteMessage} setErrorMessage={setErrorMessage} />
+        </div></>
+      }
       {user && <Blogs user={user} setCompleteMessage={setCompleteMessage} setErrorMessage={setErrorMessage}/>}
       {user &&(
         <p>{user.name} logged in <button onClick={() => logout()}>Logout</button> </p>
