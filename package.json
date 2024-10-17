@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "cypress": "^13.7.2",
+    "eslint-plugin-cypress": "^2.15.1",
+    "vite": "^5.2.8"
+  },
+  "scripts": {
+    "cypress:open": "cd ./frontend && cypress open",
+    "test:e2e": "cd ./frontend && cypress run",
+    "start:test": "cd ./backend && npm run start:test",
+    "build:ui": "cd frontend && rm -rf dist && npm run build && cp -r dist ../backend",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "start:prod": "cd ./backend && npm run start"
+  }
+}
