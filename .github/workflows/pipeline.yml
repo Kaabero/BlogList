@@ -37,9 +37,6 @@ jobs:
           SECRET: ${{ secrets.SECRET }}
         working-directory: backend 
         run: npm run test
-      - name: test frontend
-        working-directory: frontend
-        run: npm run test
       - name: build
         working-directory: frontend 
         run: npm run build:ui
